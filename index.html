@@ -27,6 +27,7 @@
     /* icon grid helpers */
     .skill-icon{ width:28px; height:28px; display:block }
     .icon-chip{ @apply inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 } 
+    .social-btn{ @apply inline-flex items-center justify-center w-10 h-10 rounded-xl bg-black/5 dark:bg-white/10 hover:scale-105 transition; }
   </style>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
@@ -50,10 +51,13 @@
 
       <div class="flex items-center gap-3">
         <!-- language toggle -->
-        <div class="flex items-center gap-1 bg-black/5 dark:bg-white/10 rounded-xl p-1">
+        <div class="flex items-center gap-1 bg-black/5 dark:bg:white/10 rounded-xl p-1">
           <button id="langEn" class="px-3 py-1 rounded-lg text-sm font-medium bg-black/10 dark:bg-white/20">EN</button>
           <button id="langFa" class="px-3 py-1 rounded-lg text-sm font-medium">FA</button>
         </div>
+
+       
+      
 
         <!-- theme toggle -->
         <button id="themeBtn" aria-label="Toggle theme" class="p-3 rounded-xl bg-black/5 dark:bg-white/10 hover:scale-105 transition-transform" title="Toggle theme">
@@ -61,8 +65,6 @@
             <path d="M12 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
           </svg>
         </button>
-
-        
       </div>
     </header>
 
@@ -76,20 +78,17 @@
         <section class="relative rounded-3xl p-6 lg:p-8 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-2xl overflow-hidden">
           <div class="flex items-start gap-6">
             <div class="w-28 h-28 rounded-2xl overflow-hidden ring-1 ring-black/10 dark:ring-white/10 shadow-lg flex-shrink-0">
-              <img id="avatarImg" src="/avatar.png" alt="avatar" class="w-full h-full object-cover" loading="lazy">
+              <img id="avatarImg" src="avatar.png" alt="avatar" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="flex-1">
               <h2 id="heroTitle" class="text-2xl lg:text-3xl font-bold">Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500">Mohammad</span></h2>
               <p id="heroSubtitle" class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl">I build fast, secure and beautiful full‑stack apps. From pixel‑perfect UIs to robust APIs.</p>
 
               <!-- Skills chips (top) -->
-              <div class="mt-4 flex flex-wrap gap-2" id="topSkillChips">
-                <!-- filled by JS for i18n consistency -->
-              </div>
+              <div class="mt-4 flex flex-wrap gap-2" id="topSkillChips"></div>
 
               <div class="mt-5 flex items-center gap-3">
                 <a href="#projects" class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-semibold shadow hover:scale-[1.02] transition-transform" id="ctaProjects">Show projects</a>
-                
                 <a id="hireBtn" href="#contact" class="px-4 py-2 rounded-lg bg-black/5 dark:bg-white/10">Hire me</a>
               </div>
             </div>
@@ -116,7 +115,7 @@
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- Project card template (repeat) -->
+            <!-- 1 -->
             <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
               <div class="flex items-start gap-4">
                 <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
@@ -134,6 +133,7 @@
               </div>
             </article>
 
+            <!-- 2 -->
             <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
               <div class="flex items-start gap-4">
                 <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
@@ -150,6 +150,78 @@
                 <div class="text-xs text-slate-500 dark:text-slate-400">2023</div>
               </div>
             </article>
+
+            <!-- 3 -->
+            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Task Management App</h4>
+                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Node.js + React app with JWT auth, role‑based access and Kanban UX.</p>
+                  <div class="mt-3 flex items-center gap-2">
+                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#">Live</a>
+                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#">Source</a>
+                  </div>
+                </div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">2023</div>
+              </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Portfolio Website</h4>
+                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Next.js + Tailwind portfolio with i18n, SEO meta, and blog.</p>
+                  <div class="mt-3 flex items-center gap-2">
+                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Live</a>
+                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Source</a>
+                  </div>
+                </div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">2022</div>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Real‑time Chat App</h4>
+                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Node.js + Socket.IO chat with rooms, typing status, and file upload.</p>
+                  <div class="mt-3 flex items-center gap-2">
+                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Live</a>
+                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Source</a>
+                  </div>
+                </div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">2022</div>
+              </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Mobile Banking App UI</h4>
+                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Flutter UI kit with dark mode, charts, and clean architecture.</p>
+                  <div class="mt-3 flex items-center gap-2">
+                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Live</a>
+                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Source</a>
+                  </div>
+                </div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">2021</div>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -163,40 +235,94 @@
             <div id="experienceSubtitle" class="text-sm text-slate-600 dark:text-slate-400">Detailed timeline</div>
           </div>
 
-          <div class="mt-4 space-y-4">
+          <div class="mt-4 space-y-5">
+            <!-- Exp 1 -->
             <div class="flex items-start gap-4">
               <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
               <div>
-                <div class="flex items-baseline gap-3">
-                  <h4 class="font-semibold" data-i18n="exp1Role">Full‑Stack Developer — Company X</h4>
-                  <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="exp1Time">2023 — Present</div>
+                <div class="flex items-baseline gap-3 flex-wrap">
+                  <h4 class="font-semibold">Senior Full‑Stack Developer — TechNova Inc.</h4>
+                  <div class="text-xs text-slate-500 dark:text-slate-400">2022 — Present · Remote</div>
                 </div>
-                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm" data-i18n="exp1Desc">Built REST APIs in Laravel, integrated React frontends, CI/CD, and improved performance.</p>
+                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
+                  <li>Led development of multi‑tenant SaaS (React, Node.js, Laravel, MongoDB) with CI/CD on GitHub Actions.</li>
+                  <li>Improved performance by <strong>40%</strong> and reduced infrastructure cost by <strong>25%</strong>.</li>
+                  <li>Mentored 5 engineers; established coding standards and review culture.</li>
+                </ul>
               </div>
             </div>
 
+            <!-- Exp 2 -->
             <div class="flex items-start gap-4">
               <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
               <div>
-                <div class="flex items-baseline gap-3">
-                  <h4 class="font-semibold" data-i18n="exp2Role">Frontend Developer — Startup Y</h4>
-                  <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="exp2Time">2019 — 2023</div>
+                <div class="flex items-baseline gap-3 flex-wrap">
+                  <h4 class="font-semibold">Full‑Stack Developer — CodeCraft Solutions</h4>
+                  <div class="text-xs text-slate-500 dark:text-slate-400">2019 — 2022 · Berlin, Germany</div>
                 </div>
-                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm" data-i18n="exp2Desc">Led React migration, design system, accessibility, and weekly product iterations.</p>
+                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
+                  <li>Delivered responsive apps using Next.js + Laravel; integrated REST/GraphQL APIs.</li>
+                  <li>Ensured accessibility compliance (WCAG 2.1 AA); reduced LCP to <strong>< 2.5s</strong>.</li>
+                  <li>Collaborated cross‑functionally with Design and Product; shipped every 2 weeks.</li>
+                </ul>
               </div>
             </div>
 
+            <!-- Exp 3 -->
             <div class="flex items-start gap-4">
               <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
               <div>
-                <div class="flex items-baseline gap-3">
-                  <h4 class="font-semibold" data-i18n="edu1Title">B.Sc. in Computer Science — University Z</h4>
-                  <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="edu1Time">2015 — 2019</div>
+                <div class="flex items-baseline gap-3 flex-wrap">
+                  <h4 class="font-semibold">Frontend Developer — WebSpark Agency</h4>
+                  <div class="text-xs text-slate-500 dark:text-slate-400">2017 — 2019 · Tehran, Iran</div>
                 </div>
-                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm" data-i18n="edu1Desc">Focus: Algorithms, Web Technologies, and HCI.</p>
+                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
+                  <li>Built interactive UIs with React and Tailwind CSS; pixel‑perfect implementation.</li>
+                  <li>Improved Lighthouse score from 68 to 95+ through performance audits.</li>
+                </ul>
               </div>
             </div>
 
+            <!-- Edu -->
+            <div class="flex items-start gap-4">
+              <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
+              <div>
+                <div class="flex items-baseline gap-3 flex-wrap">
+                  <h4 class="font-semibold">B.Sc. in Computer Science — University of Tehran</h4>
+                  <div class="text-xs text-slate-500 dark:text-slate-400">2013 — 2017</div>
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">Specialization in Software Engineering · GPA: 3.7/4.0</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
+              <div>
+                <div class="flex items-baseline gap-3 flex-wrap">
+                  <h4 class="font-semibold">Exchange Program — Technical University of Munich</h4>
+                  <div class="text-xs text-slate-500 dark:text-slate-400">2016</div>
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">Advanced web technologies and distributed systems.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certifications & Awards -->
+        <section class="rounded-2xl p-6 lg:p-8 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">Certifications & Awards</h3>
+            <div class="text-sm text-slate-600 dark:text-slate-400">International resume add‑ons</div>
+          </div>
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <ul class="space-y-2">
+              <li>Meta Front‑End Developer Professional Certificate — Coursera (2024)</li>
+              <li>Google Cloud Fundamentals — Coursera (2023)</li>
+              <li>Scrum Fundamentals Certified — SCRUMstudy (2022)</li>
+            </ul>
+            <ul class="space-y-2">
+              <li>Winner — Internal Hackathon (SaaS Analytics), TechNova (2023)</li>
+              <li>Top 10% — ICPC Tehran Regional (2016)</li>
+            </ul>
           </div>
         </section>
 
@@ -207,7 +333,7 @@
         <div class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
           <div class="flex items-center gap-4">
             <div class="w-16 h-16 rounded-xl overflow-hidden">
-              <img src="/avatar.png" alt="avatar" class="w-full h-full object-cover" loading="lazy">
+              <img src="avatar.png" alt="avatar" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div>
               <div id="sideName" class="font-semibold">Mohammad</div>
@@ -230,10 +356,21 @@
               <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="openToWork">For work</div>
             </div>
           </div>
-
-          <div class="mt-4 flex items-center gap-3">
-            <a href="#" class="flex-1 text-center px-3 py-2 rounded-md bg-black/5 dark:bg-white/10">GitHub</a>
-            <a href="#" class="flex-1 text-center px-3 py-2 rounded-md bg-black/5 dark:bg-white/10">LinkedIn</a>
+<br>
+          <!-- Social icons -->
+          <div class="flex items-center gap-3">
+            <a href="#" class="social-btn" style="background-color:#24292e;border-radius: 5px;" title="GitHub">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-8 h-8" alt="GitHub" style="border-radius: 5px;">
+            </a>
+            <a href="#" class="social-btn" style="background-color:#0A66C2;border-radius: 5px;" title="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-8 h-8" alt="LinkedIn" style="border-radius: 5px;">
+            </a>
+            <a href="#" class="social-btn" style="background-color:#229ED9;border-radius: 5px;" title="Telegram">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="w-8 h-8" alt="Telegram" style="border-radius: 5px;">
+            </a>
+            <a href="#" class="social-btn" style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);border-radius: 5px;" title="Instagram">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-8 h-8" alt="Instagram" style="border-radius: 5px;">
+            </a>
           </div>
         </div>
 
@@ -241,7 +378,7 @@
         <div class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
           <h4 id="skillsTitle" class="font-semibold">Skills</h4>
           <div class="mt-4 grid grid-cols-3 sm:grid-cols-4 gap-3" id="skillsGrid">
-            <!-- Each icon chip -->
+            <!-- Core -->
             <a class="icon-chip" href="#" title="HTML5">
               <img class="skill-icon" alt="HTML5" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
               <span class="text-xs">HTML5</span>
@@ -254,6 +391,10 @@
               <img class="skill-icon" alt="JavaScript" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
               <span class="text-xs">JavaScript</span>
             </a>
+            <a class="icon-chip" href="#" title="TypeScript">
+              <img class="skill-icon" alt="TypeScript" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
+              <span class="text-xs">TypeScript</span>
+            </a>
             <a class="icon-chip" href="#" title="Bootstrap">
               <img class="skill-icon" alt="Bootstrap" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
               <span class="text-xs">Bootstrap</span>
@@ -262,17 +403,29 @@
               <img class="skill-icon" alt="React" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
               <span class="text-xs">React</span>
             </a>
+            <a class="icon-chip" href="#" title="Next.js">
+              <img class="skill-icon" alt="Next.js" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg">
+              <span class="text-xs">Next.js</span>
+            </a>
+            <a class="icon-chip" href="#" title="Node.js">
+              <img class="skill-icon" alt="Node.js" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+              <span class="text-xs">Node.js</span>
+            </a>
             <a class="icon-chip" href="#" title="PHP">
               <img class="skill-icon" alt="PHP" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
               <span class="text-xs">PHP</span>
             </a>
             <a class="icon-chip" href="#" title="Laravel">
-              <img class="skill-icon" alt="Laravel" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg">
+              <img class="skill-icon" alt="Laravel" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg">
               <span class="text-xs">Laravel</span>
             </a>
             <a class="icon-chip" href="#" title="MySQL">
               <img class="skill-icon" alt="MySQL" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
               <span class="text-xs">MySQL</span>
+            </a>
+            <a class="icon-chip" href="#" title="MongoDB">
+              <img class="skill-icon" alt="MongoDB" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+              <span class="text-xs">MongoDB</span>
             </a>
             <a class="icon-chip" href="#" title="WordPress">
               <img class="skill-icon" alt="WordPress" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg">
@@ -281,6 +434,10 @@
             <a class="icon-chip" href="#" title="Flutter">
               <img class="skill-icon" alt="Flutter" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg">
               <span class="text-xs">Flutter</span>
+            </a>
+            <a class="icon-chip" href="#" title="Tailwind CSS">
+              <img class="skill-icon" alt="Tailwind CSS" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg">
+              <span class="text-xs">Tailwind CSS</span>
             </a>
           </div>
         </div>
@@ -325,9 +482,11 @@
         proj2Title: 'PWA E‑commerce', proj2Desc: 'High‑performance PWA with offline support and excellent Core Web Vitals.',
         live: 'Live', source: 'Source',
         experienceTitle: 'Experience & Education', experienceSubtitle: 'Detailed timeline',
-        exp1Role: 'Full‑Stack Developer — Company X', exp1Time: '2023 — Present', exp1Desc: 'Built REST APIs in Laravel, integrated React frontends, CI/CD, and improved performance.',
-        exp2Role: 'Frontend Developer — Startup Y', exp2Time: '2019 — 2023', exp2Desc: 'Led React migration, design system, accessibility, and weekly product iterations.',
-        edu1Title: 'B.Sc. in Computer Science — University Z', edu1Time: '2015 — 2019', edu1Desc: 'Focus: Algorithms, Web Technologies, and HCI.',
+        exp1Role: 'Senior Full‑Stack Developer — TechNova Inc.', exp1Time: '2022 — Present · Remote', exp1Desc: 'SaaS with React, Node.js, Laravel, MongoDB. CI/CD and performance.',
+        exp2Role: 'Full‑Stack Developer — CodeCraft Solutions', exp2Time: '2019 — 2022 · Berlin, Germany', exp2Desc: 'Next.js + Laravel, REST/GraphQL, accessibility (WCAG 2.1).',
+        exp3Role: 'Frontend Developer — WebSpark Agency', exp3Time: '2017 — 2019 · Tehran, Iran', exp3Desc: 'React + Tailwind; pixel‑perfect UIs.',
+        edu1Title: 'B.Sc. in Computer Science — University of Tehran', edu1Time: '2013 — 2017', edu1Desc: 'Software Engineering, GPA 3.7/4.0',
+        edu2Title: 'Exchange — Technical University of Munich', edu2Time: '2016', edu2Desc: 'Advanced web & distributed systems',
         skillsTitle: 'Skills', humanLangTitle: 'Languages', langFa: 'Persian (Native)', langEn: 'English (Professional)',
         contactTitle: 'Contact', contactHint: 'Use this demo form or open email client. To receive messages, configure an endpoint.',
         downloadCV: 'Download CV', projectsCount: 'Projects', certsCount: 'Certs', openToWork: 'For work', openToWorkVal: 'Open'
@@ -343,9 +502,11 @@
         proj2Title: 'فروشگاه PWA', proj2Desc: 'PWA پرسرعت با پشتیبانی آفلاین و امتیاز عالی در Core Web Vitals.',
         live: 'نمایش', source: 'سورس',
         experienceTitle: 'سوابق و تحصیلات', experienceSubtitle: 'خط زمانی کامل',
-        exp1Role: 'توسعه‌دهنده فول‌استک — شرکت X', exp1Time: '۲۰۲۳ — اکنون', exp1Desc: 'توسعه REST API با Laravel، اتصال فرانت‌اند React، CI/CD و بهبود کارایی.',
-        exp2Role: 'توسعه‌دهنده فرانت‌اند — استارتاپ Y', exp2Time: '۲۰۱۹ — ۲۰۲۳', exp2Desc: 'مهاجرت به React، سیستم طراحی، دسترس‌پذیری و انتشارهای هفتگی.',
-        edu1Title: 'کارشناسی علوم کامپیوتر — دانشگاه Z', edu1Time: '۲۰۱۵ — ۲۰۱۹', edu1Desc: 'گرایش: الگوریتم‌ها، وب و HCI.',
+        exp1Role: 'ارشد فول‌استک — TechNova', exp1Time: '۲۰۲۲ — اکنون · دورکاری', exp1Desc: 'SaaS با React، Node.js، Laravel، MongoDB. CI/CD و کارایی.',
+        exp2Role: 'فول‌استک — CodeCraft', exp2Time: '۲۰۱۹ — ۲۰۲۲ · برلین', exp2Desc: 'Next.js + Laravel، API های REST/GraphQL، دسترس‌پذیری.',
+        exp3Role: 'فرانت‌اند — WebSpark', exp3Time: '۲۰۱۷ — ۲۰۱۹ · تهران', exp3Desc: 'React + Tailwind؛ رابط‌های دقیق.',
+        edu1Title: 'کارشناسی علوم کامپیوتر — دانشگاه تهران', edu1Time: '۲۰۱۳ — ۲۰۱۷', edu1Desc: 'مهندسی نرم‌افزار، معدل ۳.۷/۴',
+        edu2Title: 'مهمانی — دانشگاه صنعتی مونیخ', edu2Time: '۲۰۱۶', edu2Desc: 'فناوری‌های وب پیشرفته و سیستم‌های توزیع‌شده',
         skillsTitle: 'مهارت‌ها', humanLangTitle: 'زبان‌ها', langFa: 'فارسی (زبان مادری)', langEn: 'انگلیسی (حرفه‌ای)',
         contactTitle: 'تماس', contactHint: 'برای دمو از این فرم استفاده کنید یا ایمیل را باز کنید. برای دریافت پیام باید endpoint تنظیم شود.',
         downloadCV: 'دانلود رزومه', projectsCount: 'پروژه', certsCount: 'مدرک', openToWork: 'آماده همکاری', openToWorkVal: 'آماده'
@@ -394,19 +555,19 @@
 
       // Top skills chips (text changes; icons remain)
       const topChips = {
-        en: ['React','Laravel','MySQL','WordPress','Flutter'],
-        fa: ['React','Laravel','MySQL','WordPress','Flutter'] // keep brand names
+        en: ['React','Laravel','MySQL','TypeScript','Node.js','Next.js','MongoDB','Tailwind'],
+        fa: ['React','Laravel','MySQL','TypeScript','Node.js','Next.js','MongoDB','Tailwind']
       };
       const top = document.getElementById('topSkillChips'); top.innerHTML = '';
-      topChips[lang].forEach(label=>{
+      topChips[lang].slice(0,8).forEach(label=>{
         const span = document.createElement('span');
         span.className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/10 text-sm';
         span.textContent = label; top.appendChild(span);
       });
 
       // Human languages list
-      document.querySelector('[data-i18n="langFa"]').textContent = L.langFa;
-      document.querySelector('[data-i18n="langEn"]').textContent = L.langEn;
+      const f = document.querySelector('[data-i18n="langFa"]'); if (f) f.textContent = L.langFa;
+      const e = document.querySelector('[data-i18n="langEn"]'); if (e) e.textContent = L.langEn;
     }
 
     document.getElementById('langEn').addEventListener('click', ()=> applyLang('en'));
@@ -469,11 +630,13 @@
         <ul>
           <li>${L.exp1Role} (${L.exp1Time}): ${L.exp1Desc}</li>
           <li>${L.exp2Role} (${L.exp2Time}): ${L.exp2Desc}</li>
+          <li>${L.exp3Role} (${L.exp3Time}): ${L.exp3Desc}</li>
         </ul>
         <h2>${currentLang==='fa'?'تحصیلات':'Education'}</h2>
         <p>${L.edu1Title} (${L.edu1Time}) — ${L.edu1Desc}</p>
+        <p>${L.edu2Title} (${L.edu2Time}) — ${L.edu2Desc}</p>
         <h2>${currentLang==='fa'?'مهارت‌ها':'Skills'}</h2>
-        <p>HTML, CSS, JavaScript, Bootstrap, React, PHP, Laravel, MySQL, WordPress, Flutter</p>
+        <p>HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, PHP, Laravel, MySQL, MongoDB, WordPress, Flutter, Tailwind CSS</p>
         <h2>${currentLang==='fa'?'زبان‌ها':'Languages'}</h2>
         <p>${L.langFa} — ${L.langEn}</p>
       `
