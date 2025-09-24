@@ -230,6 +230,24 @@
                 <div class="text-xs text-slate-500 dark:text-slate-400">2021</div>
               </div>
             </article>
+
+<!-- 7 -->
+            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+  <div class="flex items-start gap-4">
+    <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+      <img src="https://images.unsplash.com/photo-1618477461853-c0c721d6fe7b?q=80&w=800&auto=format&fit=crop" alt="SEO project" class="w-full h-full object-cover" loading="lazy">
+    </div>
+    <div class="flex-1">
+      <h4 class="font-semibold" data-i18n="proj3Title">SEO-Optimized Blog Platform</h4>
+      <p class="text-slate-600 dark:text-slate-300 text-sm mt-1" data-i18n="proj3Desc">Developed a blog platform with Next.js, optimized for SEO with SSR, meta tags, sitemaps, and schema markup, achieving 90+ Lighthouse SEO scores.</p>
+      <div class="mt-3 flex items-center gap-2">
+        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#" data-i18n="live">Live</a>
+        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#" data-i18n="source">Source</a>
+      </div>
+    </div>
+    <div class="text-xs text-slate-500 dark:text-slate-400">2024</div>
+  </div>
+</article>
           </div>
         </section>
 
@@ -256,6 +274,7 @@
                   <li>Led development of multi‑tenant SaaS (React, Node.js, Laravel, MongoDB) with CI/CD on GitHub Actions.</li>
                   <li>Improved performance by <strong>40%</strong> and reduced infrastructure cost by <strong>25%</strong>.</li>
                   <li>Mentored 5 engineers; established coding standards and review culture.</li>
+                  <li>Implemented SEO strategies, including schema markup, meta optimization, and site speed improvements, boosting organic traffic by <strong>30%</strong>.</li>
                 </ul>
               </div>
             </div>
@@ -458,6 +477,10 @@
               <img class="skill-icon" alt="Tailwind CSS" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg">
               <span class="text-xs">Tailwind CSS</span>
             </a>
+            <a class="icon-chip" href="#" title="SEO">
+              <img class="skill-icon" alt="SEO" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg">
+              <span class="text-xs">SEO</span>
+            </a>
           </div>
         </div>
 
@@ -508,7 +531,10 @@
         edu2Title: 'Exchange — Technical University of Munich', edu2Time: '2016', edu2Desc: 'Advanced web & distributed systems',
         skillsTitle: 'Skills', humanLangTitle: 'Languages', langFa: 'Persian (Native)', langEn: 'English (Professional)',
         contactTitle: 'Contact', contactHint: 'Use this demo form or open email client. To receive messages, configure an endpoint.',
-        downloadCV: 'Download CV', projectsCount: 'Projects', certsCount: 'Certs', openToWork: 'For work', openToWorkVal: 'Open'
+        downloadCV: 'Download CV', projectsCount: 'Projects', certsCount: 'Certs', openToWork: 'For work', openToWorkVal: 'Open',
+        proj3Title: 'SEO-Optimized Blog Platform',
+    proj3Desc: 'Developed a blog platform with Next.js, optimized for SEO with SSR, meta tags, sitemaps, and schema markup, achieving 90+ Lighthouse SEO scores.',
+        exp1Desc: 'SaaS with React, Node.js, Laravel, MongoDB. CI/CD, performance, and SEO strategies including schema markup and meta optimization, boosting organic traffic by 30%.'
       },
       fa: {
         name: 'محمد', subtitle: 'توسعه‌دهنده فول‌استک • React • Laravel', heroTitle: 'سلام، من محمد هستم',
@@ -528,7 +554,11 @@
         edu2Title: 'مهمانی — دانشگاه صنعتی مونیخ', edu2Time: '۲۰۱۶', edu2Desc: 'فناوری‌های وب پیشرفته و سیستم‌های توزیع‌شده',
         skillsTitle: 'مهارت‌ها', humanLangTitle: 'زبان‌ها', langFa: 'فارسی (زبان مادری)', langEn: 'انگلیسی (حرفه‌ای)',
         contactTitle: 'تماس', contactHint: 'برای دمو از این فرم استفاده کنید یا ایمیل را باز کنید. برای دریافت پیام باید endpoint تنظیم شود.',
-        downloadCV: 'دانلود رزومه', projectsCount: 'پروژه', certsCount: 'مدرک', openToWork: 'آماده همکاری', openToWorkVal: 'آماده'
+        downloadCV: 'دانلود رزومه', projectsCount: 'پروژه', certsCount: 'مدرک', openToWork: 'آماده همکاری', openToWorkVal: 'آماده',
+        proj3Title: 'پلتفرم وبلاگ بهینه‌شده برای سئو',
+    proj3Desc: 'توسعه یک پلتفرم وبلاگ با Next.js، بهینه‌شده برای سئو با SSR، متا تگ‌ها، نقشه سایت و نشانه‌گذاری schema، با امتیاز ۹۰+ در Lighthouse.',
+        exp1Desc: 'SaaS با React، Node.js، Laravel، MongoDB. CI/CD، کارایی و استراتژی‌های سئو شامل نشانه‌گذاری schema و بهینه‌سازی متا، افزایش ۳۰٪ ترافیک ارگانیک.'
+        
       }
     };
 
@@ -574,8 +604,8 @@
 
       // Top skills chips (text changes; icons remain)
       const topChips = {
-        en: ['React','Laravel','MySQL','TypeScript','Node.js','Next.js','MongoDB','Tailwind'],
-        fa: ['React','Laravel','MySQL','TypeScript','Node.js','Next.js','MongoDB','Tailwind']
+        en: ['React','Laravel','MySQL','TypeScript','Node.js','Next.js','MongoDB','Tailwind', 'SEO'],
+        fa: ['React','Laravel','MySQL','TypeScript','Node.js','Next.js','MongoDB','Tailwind', 'سئو']
       };
       const top = document.getElementById('topSkillChips'); top.innerHTML = '';
       topChips[lang].slice(0,8).forEach(label=>{
