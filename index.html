@@ -1,717 +1,856 @@
 <!doctype html>
 <html lang="en" dir="ltr">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Resume — Dual Language</title>
-  <meta name="description" content="A modern, bilingual (EN/FA) resume / portfolio. Theme switch, printable CV, projects, experience, skills with icons." />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-91TZSD14PJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Resume — Dual Language</title>
+    <meta name="description"
+        content="A modern, bilingual (EN/FA) resume / portfolio. Theme switch, printable CV, projects, experience, skills with icons." />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-91TZSD14PJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-91TZSD14PJ');
-</script>
-  <!-- Fonts: Inter for English, Vazirmatn for Persian -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+        gtag('config', 'G-91TZSD14PJ');
+    </script>
+    <!-- Fonts: Inter for English, Vazirmatn for Persian -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Vazirmatn:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter','Vazirmatn','ui-sans-serif','system-ui'] }, colors: { brand: { 400: '#7c3aed', 500: '#6d28d9', 600: '#4f46e5' } } } } }
-  </script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'Vazirmatn', 'ui-sans-serif', 'system-ui'] }, colors: { brand: { 400: '#7c3aed', 500: '#6d28d9', 600: '#4f46e5' } } } } }
+    </script>
 
-  <style>
-    :root{ --glass: rgba(255,255,255,0.04); --glass-2: rgba(255,255,255,0.02) }
-    html,body{height:100%}
-    body{font-family:Inter, Vazirmatn, system-ui; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
-    body[lang='fa']{direction:rtl}
-    .caret{display:inline-block;width:2px;height:1.1em;background:currentColor;margin-inline-start:8px;animation:blink 1s steps(2,end) infinite}
-    @keyframes blink{50%{opacity:0}}
-    .floating-decor{position:absolute;filter:blur(40px);opacity:0.12;transform:translateZ(0)}
-    @media print{ body *{visibility:hidden} #printCV, #printCV *{visibility:visible} #printCV{position:fixed;left:0;top:0;width:100%} }
-    /* icon grid helpers */
-    .skill-icon{ width:28px; height:28px; display:block }
-    .icon-chip{ @apply inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 } 
-    .social-btn{ @apply inline-flex items-center justify-center w-10 h-10 rounded-xl bg-black/5 dark:bg-white/10 hover:scale-105 transition; }
-  </style>
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-2: rgba(255, 255, 255, 0.02)
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            font-family: Inter, Vazirmatn, system-ui;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        body[lang='fa'] {
+            direction: rtl
+        }
+
+        .caret {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background: currentColor;
+            margin-inline-start: 8px;
+            animation: blink 1s steps(2, end) infinite
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0
+            }
+        }
+
+        .floating-decor {
+            position: absolute;
+            filter: blur(40px);
+            opacity: 0.12;
+            transform: translateZ(0)
+        }
+
+        @media print {
+            body * {
+                visibility: hidden
+            }
+
+            #printCV,
+            #printCV * {
+                visibility: visible
+            }
+
+            #printCV {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%
+            }
+        }
+
+        /* icon grid helpers */
+        .skill-icon {
+            width: 28px;
+            height: 28px;
+            display: block
+        }
+
+        .icon-chip {
+            @apply inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10
+        }
+
+        .social-btn {
+            @apply inline-flex items-center justify-center w-10 h-10 rounded-xl bg-black/5 dark:bg-white/10 hover:scale-105 transition;
+        }
+    </style>
 </head>
+
 <body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
-  <div class="relative max-w-6xl mx-auto px-6 py-10">
+    <div class="relative max-w-6xl mx-auto px-6 py-10">
 
-    <!-- Decorative blobs -->
-    <div class="floating-decor left-0 top-10 w-72 h-72 rounded-full bg-gradient-to-br from-purple-600 to-cyan-400 opacity-30 -z-10" style="left:-120px;top:-40px"></div>
-    <div class="floating-decor right-0 bottom-6 w-96 h-96 rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 opacity-20 -z-10" style="right:-160px;bottom:-60px"></div>
+        <!-- Decorative blobs -->
+        <div class="floating-decor left-0 top-10 w-72 h-72 rounded-full bg-gradient-to-br from-purple-600 to-cyan-400 opacity-30 -z-10"
+            style="left:-120px;top:-40px"></div>
+        <div class="floating-decor right-0 bottom-6 w-96 h-96 rounded-full bg-gradient-to-br from-yellow-400 to-pink-400 opacity-20 -z-10"
+            style="right:-160px;bottom:-60px"></div>
 
-    <!-- Top nav -->
-    <header class="flex items-center justify-between gap-4">
-      <div class="flex items-center gap-4">
-        <div class="w-14 h-14 rounded-3xl bg-gradient-to-br from-purple-600 to-cyan-400 flex items-center justify-center shadow-2xl ring-1 ring-white/60 text-black">
-          <span class="font-extrabold tracking-tight">MN</span>
-        </div>
-        <div>
-          <h1 id="nameTitle" class="text-lg font-semibold">Mohammad</h1>
-          <p id="subtitle" class="text-sm text-slate-600 dark:text-slate-300">Full‑Stack Developer • React • Laravel</p>
-        </div>
-      </div>
-
-      <div class="flex items-center gap-3">
-        <!-- language toggle -->
-        <div class="flex items-center gap-1 bg-black/5 dark:bg:white/10 rounded-xl p-1">
-          <button id="langEn" class="px-3 py-1 rounded-lg text-sm font-medium bg-black/10 dark:bg-white/20">EN</button>
-          <button id="langFa" class="px-3 py-1 rounded-lg text-sm font-medium">FA</button>
-        </div>
-
-       
-      
-
-        <!-- theme toggle -->
-        <button id="themeBtn" aria-label="Toggle theme" class="p-3 rounded-xl bg-black/5 dark:bg-white/10 hover:scale-105 transition-transform" title="Toggle theme">
-          <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <!-- MAIN -->
-    <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-      <!-- left: hero + projects + print area -->
-      <main class="lg:col-span-2 space-y-6">
-
-        <!-- HERO card -->
-        <section class="relative rounded-3xl p-6 lg:p-8 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-2xl overflow-hidden">
-          <div class="flex items-start gap-6">
-            <div class="w-28 h-28 rounded-2xl overflow-hidden ring-1 ring-black/10 dark:ring-white/10 shadow-lg flex-shrink-0">
-              <img id="avatarImg" src="avatar.png" alt="avatar" class="w-full h-full object-cover" loading="lazy">
-            </div>
-            <div class="flex-1">
-              <h2 id="heroTitle" class="text-2xl lg:text-3xl font-bold">Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500">Mohammad</span></h2>
-              <p id="heroSubtitle" class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl">I build fast, secure and beautiful full‑stack apps. From pixel‑perfect UIs to robust APIs.</p>
-
-              <!-- Skills chips (top) -->
-              <div class="mt-4 flex flex-wrap gap-2" id="topSkillChips"></div>
-
-              <div class="mt-5 flex items-center gap-3">
-                <a href="#projects" class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-semibold shadow hover:scale-[1.02] transition-transform" id="ctaProjects">Show projects</a>
-                <a id="hireBtn" href="#contact" class="px-4 py-2 rounded-lg bg-black/5 dark:bg-white/10">Hire me</a>
-              </div>
+        <!-- Top nav -->
+        <header class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-14 h-14 rounded-3xl bg-gradient-to-br from-purple-600 to-cyan-400 flex items-center justify-center shadow-2xl ring-1 ring-white/60 text-black">
+                    <span class="font-extrabold tracking-tight">MN</span>
+                </div>
+                <div>
+                    <h1 id="nameTitle" class="text-lg font-semibold">Mohammad</h1>
+                    <p id="subtitle" class="text-sm text-slate-600 dark:text-slate-300">Full‑Stack Developer • React •
+                        Laravel</p>
+                </div>
             </div>
 
-            <div class="hidden lg:flex flex-col items-end gap-2 w-44">
-              <div class="text-sm text-slate-600 dark:text-slate-300" id="currentlyLbl">Currently:</div>
-              <div class="mt-2 text-lg font-semibold" id="currentlyText">Shipping a SaaS analytics platform</div>
-              <div class="mt-3 text-slate-500 dark:text-slate-400 text-xs" id="currentlyMeta">Full‑stack • React + Laravel</div>
+            <div class="flex items-center gap-3">
+                <!-- language toggle -->
+                <div class="flex items-center gap-1 bg-black/5 dark:bg:white/10 rounded-xl p-1">
+                    <button id="langEn"
+                        class="px-3 py-1 rounded-lg text-sm font-medium bg-black/10 dark:bg-white/20">EN</button>
+                    <button id="langFa" class="px-3 py-1 rounded-lg text-sm font-medium">FA</button>
+                </div>
+
+
+
+
+                <!-- theme toggle -->
+                <button id="themeBtn" aria-label="Toggle theme"
+                    class="p-3 rounded-xl bg-black/5 dark:bg-white/10 hover:scale-105 transition-transform"
+                    title="Toggle theme">
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M12 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                    </svg>
+                </button>
             </div>
-          </div>
+        </header>
 
-          <!-- typewriter -->
-          <div class="mt-6">
-            <div class="text-slate-600 dark:text-slate-300" id="iWorkOn">I work on</div>
-            <div class="mt-1 text-lg font-medium"><span id="typewriter"></span><span class="caret"></span></div>
-          </div>
-        </section>
+        <!-- MAIN -->
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-        <!-- Projects -->
-        <section id="projects" class="space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 id="projectsTitle" class="text-xl font-semibold">Selected Projects</h3>
-            <div id="projectsSubtitle" class="text-sm text-slate-600 dark:text-slate-400">Showcasing product & open‑source work</div>
-          </div>
+            <!-- left: hero + projects + print area -->
+            <main class="lg:col-span-2 space-y-6">
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- 1 -->
-            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
-              <div class="flex items-start gap-4">
-                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1526378721238-1b8f4f2f0e5f?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-semibold" data-i18n="proj1Title">SaaS Dashboard</h4>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1" data-i18n="proj1Desc">Interactive analytics dashboard built with React + D3, focusing on realtime UX and performance.</p>
-                  <div class="mt-3 flex items-center gap-2">
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#" data-i18n="live">Live</a>
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#" data-i18n="source">Source</a>
-                  </div>
-                </div>
-                <div class="text-xs text-slate-500 dark:text-slate-400">2024</div>
-              </div>
-            </article>
+                <!-- HERO card -->
+                <section
+                    class="relative rounded-3xl p-6 lg:p-8 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-2xl overflow-hidden">
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="w-28 h-28 rounded-2xl overflow-hidden ring-1 ring-black/10 dark:ring-white/10 shadow-lg flex-shrink-0">
+                            <img id="avatarImg" src="avatar.png" alt="avatar" class="w-full h-full object-cover"
+                                loading="lazy">
+                        </div>
+                        <div class="flex-1">
+                            <h2 id="heroTitle" class="text-2xl lg:text-3xl font-bold">Hi, I'm <span
+                                    class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500">Mohammad</span>
+                            </h2>
+                            <p id="heroSubtitle" class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl">I build fast,
+                                secure and beautiful full‑stack apps. From pixel‑perfect UIs to robust APIs.</p>
 
-            <!-- 2 -->
-            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
-              <div class="flex items-start gap-4">
-                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-semibold" data-i18n="proj2Title">PWA E‑commerce</h4>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1" data-i18n="proj2Desc">High‑performance PWA with offline support and excellent Core Web Vitals.</p>
-                  <div class="mt-3 flex items-center gap-2">
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#" data-i18n="live">Live</a>
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#" data-i18n="source">Source</a>
-                  </div>
-                </div>
-                <div class="text-xs text-slate-500 dark:text-slate-400">2023</div>
-              </div>
-            </article>
+                            <!-- Skills chips (top) -->
+                            <div class="mt-4 flex flex-wrap gap-2" id="topSkillChips"></div>
 
-            <!-- 3 -->
-            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
-              <div class="flex items-start gap-4">
-                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-semibold">Task Management App</h4>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Node.js + React app with JWT auth, role‑based access and Kanban UX.</p>
-                  <div class="mt-3 flex items-center gap-2">
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#">Live</a>
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#">Source</a>
-                  </div>
-                </div>
-                <div class="text-xs text-slate-500 dark:text-slate-400">2023</div>
-              </div>
-            </article>
+                            <div class="mt-5 flex items-center gap-3">
+                                <a href="#projects"
+                                    class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-semibold shadow hover:scale-[1.02] transition-transform"
+                                    id="ctaProjects">Show projects</a>
+                                <a id="hireBtn" href="#contact"
+                                    class="px-4 py-2 rounded-lg bg-black/5 dark:bg-white/10">Hire me</a>
+                            </div>
+                        </div>
 
-            <!-- 4 -->
-            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
-              <div class="flex items-start gap-4">
-                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-semibold">Portfolio Website</h4>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Next.js + Tailwind portfolio with i18n, SEO meta, and blog.</p>
-                  <div class="mt-3 flex items-center gap-2">
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Live</a>
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Source</a>
-                  </div>
-                </div>
-                <div class="text-xs text-slate-500 dark:text-slate-400">2022</div>
-              </div>
-            </article>
+                        <div class="hidden lg:flex flex-col items-end gap-2 w-44">
+                            <div class="text-sm text-slate-600 dark:text-slate-300" id="currentlyLbl">Currently:</div>
+                            <div class="mt-2 text-lg font-semibold" id="currentlyText">Shipping a SaaS analytics
+                                platform</div>
+                            <div class="mt-3 text-slate-500 dark:text-slate-400 text-xs" id="currentlyMeta">Full‑stack •
+                                React + Laravel</div>
+                        </div>
+                    </div>
 
-            <!-- 5 -->
-            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
-              <div class="flex items-start gap-4">
-                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-semibold">Real‑time Chat App</h4>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Node.js + Socket.IO chat with rooms, typing status, and file upload.</p>
-                  <div class="mt-3 flex items-center gap-2">
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Live</a>
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Source</a>
-                  </div>
-                </div>
-                <div class="text-xs text-slate-500 dark:text-slate-400">2022</div>
-              </div>
-            </article>
+                    <!-- typewriter -->
+                    <div class="mt-6">
+                        <div class="text-slate-600 dark:text-slate-300" id="iWorkOn">I work on</div>
+                        <div class="mt-1 text-lg font-medium"><span id="typewriter"></span><span class="caret"></span>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- 6 -->
-            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
-              <div class="flex items-start gap-4">
-                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
-                  <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=800&auto=format&fit=crop" alt="project" class="w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-semibold">Mobile Banking App UI</h4>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Flutter UI kit with dark mode, charts, and clean architecture.</p>
-                  <div class="mt-3 flex items-center gap-2">
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Live</a>
-                    <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#">Source</a>
-                  </div>
-                </div>
-                <div class="text-xs text-slate-500 dark:text-slate-400">2021</div>
-              </div>
-            </article>
+                <!-- Projects -->
+                <section id="projects" class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 id="projectsTitle" class="text-xl font-semibold">Selected Projects</h3>
+                        <div id="projectsSubtitle" class="text-sm text-slate-600 dark:text-slate-400">Showcasing product
+                            & open‑source work</div>
+                    </div>
 
-<!-- 7 -->
-            <article class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
-  <div class="flex items-start gap-4">
-    <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
-      <img src="https://images.unsplash.com/photo-1618477461853-c0c721d6fe7b?q=80&w=800&auto=format&fit=crop" alt="SEO project" class="w-full h-full object-cover" loading="lazy">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Aryadiet -->
+                        <article
+                            class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
+                                    <img src="https://aryadiet.com/wp-weblog/wp-content/uploads/2025/11/logo.svg"
+                                        alt="project" class="w-16 h-16 object-contain" loading="lazy">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold">Aryadiet Collection</h4>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Architected a scalable
+                                        diet platform using React, Laravel, and MySQL. Implemented customized meal
+                                        planning algorithms, real-time tracking, and secure payments.</p>
+                                    <div class="mt-3 flex items-center gap-2">
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10"
+                                            href="https://aryadiet.com/">Live</a>
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10"
+                                            href="#">Source</a>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400">2025</div>
+                            </div>
+                        </article>
+
+                        <!-- PWA E-commerce -->
+                        <article
+                            class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+                            <div class="flex items-start gap-4">
+                                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop"
+                                        alt="project" class="w-full h-full object-cover" loading="lazy">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold" data-i18n="proj2Title">PWA E‑commerce</h4>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm mt-1" data-i18n="proj2Desc">
+                                        High‑performance PWA with offline support and excellent Core Web Vitals.</p>
+                                    <div class="mt-3 flex items-center gap-2">
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10"
+                                            href="https://de.squarespace.com/" data-i18n="live">Live</a>
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10" href="#"
+                                            data-i18n="source">Source</a>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400">2023</div>
+                            </div>
+                        </article>
+
+                        <!-- Task Management App -->
+                        <article
+                            class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+                            <div class="flex items-start gap-4">
+                                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop"
+                                        alt="project" class="w-full h-full object-cover" loading="lazy">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold">Task Management App</h4>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Node.js + React app with
+                                        JWT auth, role‑based access and Kanban UX.</p>
+                                    <div class="mt-3 flex items-center gap-2">
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10"
+                                            href="https://www.any.do/">Live</a>
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10"
+                                            href="#">Source</a>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400">2023</div>
+                            </div>
+                        </article>
+
+                        <!-- Portfolio Website -->
+                        <article
+                            class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+                            <div class="flex items-start gap-4">
+                                <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop"
+                                        alt="project" class="w-full h-full object-cover" loading="lazy">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold">Portfolio Website</h4>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Next.js + Tailwind
+                                        portfolio with i18n, SEO meta, and blog.</p>
+                                    <div class="mt-3 flex items-center gap-2">
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10"
+                                            href="https://mohammadresume.netlify.app/">Live</a>
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10"
+                                            href="#">Source</a>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400">2022</div>
+                            </div>
+                        </article>
+
+                        <!-- Enobus -->
+                        <article
+                            class="group rounded-2xl p-4 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform shadow-lg">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
+                                    <img src="https://enobus.ir/wp-content/uploads/2024/06/enobus-logo-fa-1024x724.jpg"
+                                        alt="Enobus" class="w-full h-full object-cover" loading="lazy">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold">Enobus Smart School Service</h4>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Smart transportation
+                                        management system built with React, TypeScript, and Laravel. Features real-time
+                                        tracking, route optimization, and automated notifications for parents.</p>
+                                    <div class="mt-3 flex items-center gap-2">
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10"
+                                            href="https://enobus.ir/">Live</a>
+                                        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg-white/10"
+                                            href="#">Source</a>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400">2021</div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Printable resume area -->
+                <section id="printCV" class="hidden print:block bg-white text-black p-6 rounded-md"></section>
+
+                <!-- Experience / Education -->
+                <section
+                    class="rounded-2xl p-6 lg:p-8 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <h3 id="experienceTitle" class="text-lg font-semibold">Experience & Education</h3>
+                        <div id="experienceSubtitle" class="text-sm text-slate-600 dark:text-slate-400">Detailed
+                            timeline</div>
+                    </div>
+
+                    <div class="mt-4 space-y-5">
+                        <!-- Exp 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
+                            <div>
+                                <div class="flex items-baseline gap-3 flex-wrap">
+                                    <h4 class="font-semibold">Senior Full‑Stack Developer — TechNova Inc.</h4>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">2022 — Present · Remote
+                                    </div>
+                                </div>
+                                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
+                                    <li>Led development of multi‑tenant SaaS (React, Node.js, Laravel, MongoDB) with
+                                        CI/CD on GitHub Actions.</li>
+                                    <li>Improved performance by <strong>40%</strong> and reduced infrastructure cost by
+                                        <strong>25%</strong>.
+                                    </li>
+                                    <li>Mentored 5 engineers; established coding standards and review culture.</li>
+                                    <li>Implemented SEO strategies, including schema markup, meta optimization, and site
+                                        speed improvements, boosting organic traffic by <strong>30%</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Exp 2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
+                            <div>
+                                <div class="flex items-baseline gap-3 flex-wrap">
+                                    <h4 class="font-semibold">Full‑Stack Developer — CodeCraft Solutions</h4>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">2019 — 2022 · Berlin,
+                                        Germany</div>
+                                </div>
+                                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
+                                    <li>Delivered responsive apps using Next.js + Laravel; integrated REST/GraphQL APIs.
+                                    </li>
+                                    <li>Ensured accessibility compliance (WCAG 2.1 AA); reduced LCP to <strong>
+                                            < 2.5s</strong>.</li>
+                                    <li>Collaborated cross‑functionally with Design and Product; shipped every 2 weeks.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Exp 3 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
+                            <div>
+                                <div class="flex items-baseline gap-3 flex-wrap">
+                                    <h4 class="font-semibold">Frontend Developer — WebSpark Agency</h4>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">2017 — 2019 · Tehran, Iran
+                                    </div>
+                                </div>
+                                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
+                                    <li>Built interactive UIs with React and Tailwind CSS; pixel‑perfect implementation.
+                                    </li>
+                                    <li>Improved Lighthouse score from 68 to 95+ through performance audits.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Edu -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
+                            <div>
+                                <div class="flex items-baseline gap-3 flex-wrap">
+                                    <h4 class="font-semibold">B.Sc. in Computer Science — University of Tehran</h4>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">2013 — 2017</div>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">Specialization in Software
+                                    Engineering · GPA: 3.7/4.0</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
+                            <div>
+                                <div class="flex items-baseline gap-3 flex-wrap">
+                                    <h4 class="font-semibold">Exchange Program — Technical University of Munich</h4>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">2016</div>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">Advanced web technologies and
+                                    distributed systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications & Awards -->
+                <section
+                    class="rounded-2xl p-6 lg:p-8 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-semibold">Certifications & Awards</h3>
+                        <div class="text-sm text-slate-600 dark:text-slate-400">International resume add‑ons</div>
+                    </div>
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <ul class="space-y-2">
+                            <li>Meta Front‑End Developer Professional Certificate — Coursera (2024)</li>
+                            <li>Google Cloud Fundamentals — Coursera (2023)</li>
+                            <li>Scrum Fundamentals Certified — SCRUMstudy (2022)</li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li>Winner — Internal Hackathon (SaaS Analytics), TechNova (2023)</li>
+                            <li>Top 10% — ICPC Tehran Regional (2016)</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- RIGHT: sidebar (profile, skills, contact) -->
+            <aside class="space-y-6">
+                <div
+                    class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl overflow-hidden">
+                            <img src="avatar.png" alt="avatar" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div>
+                            <div id="sideName" class="font-semibold">Mohammad</div>
+                            <div id="sideTitle" class="text-sm text-slate-600 dark:text-slate-300">Full‑Stack Developer
+                            </div>
+                            <div class="mt-2 text-xs text-slate-500 dark:text-slate-400" id="sideLocation">Rasht, Iran
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 grid grid-cols-3 gap-2 text-center text-sm">
+                        <div>
+                            <div class="font-semibold">12+</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="projectsCount">Projects
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">5</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="certsCount">Certs</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold" data-i18n="openToWorkVal">Open</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="openToWork">For work
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Social icons -->
+                    <div class="flex items-center gap-3">
+                        <a href="https://github.com/MohammadNoruzshenas" class="social-btn"
+                            style="background-color:#24292e;border-radius: 5px;" title="GitHub">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                class="w-8 h-8" alt="GitHub" style="border-radius: 5px;">
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohammad-nrz-a67305266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            class="social-btn" style="background-color:#0A66C2;border-radius: 5px;" title="LinkedIn">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                                class="w-8 h-8" alt="LinkedIn" style="border-radius: 5px;">
+                        </a>
+                        <a href="https://t.me/MD_1236" class="social-btn"
+                            style="background-color:#229ED9;border-radius: 5px;" title="Telegram">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+                                class="w-8 h-8" alt="Telegram" style="border-radius: 5px;">
+                        </a>
+                        <a href="https://www.instagram.com/mohammad_nrzshns5789/" class="social-btn"
+                            style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);border-radius: 5px;"
+                            title="Instagram">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                                class="w-8 h-8" alt="Instagram" style="border-radius: 5px;">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Skills with ICONS (online via Devicon CDN) -->
+                <div
+                    class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
+                    <h4 id="skillsTitle" class="font-semibold">Skills</h4>
+                    <div class="mt-4 grid grid-cols-3 sm:grid-cols-4 gap-3" id="skillsGrid">
+                        <!-- Core -->
+                        <a class="icon-chip" href="#" title="HTML5">
+                            <img class="skill-icon" alt="HTML5" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+                            <span class="text-xs">HTML5</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="CSS3">
+                            <img class="skill-icon" alt="CSS3" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+                            <span class="text-xs">CSS3</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="JavaScript">
+                            <img class="skill-icon" alt="JavaScript" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+                            <span class="text-xs">JavaScript</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="TypeScript">
+                            <img class="skill-icon" alt="TypeScript" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
+                            <span class="text-xs">TypeScript</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="Bootstrap">
+                            <img class="skill-icon" alt="Bootstrap" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
+                            <span class="text-xs">Bootstrap</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="React">
+                            <img class="skill-icon" alt="React" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+                            <span class="text-xs">React</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="Next.js">
+                            <img class="skill-icon" alt="Next.js" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg">
+                            <span class="text-xs">Next.js</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="Node.js">
+                            <img class="skill-icon" alt="Node.js" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+                            <span class="text-xs">Node.js</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="PHP">
+                            <img class="skill-icon" alt="PHP" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+                            <span class="text-xs">PHP</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="Laravel">
+                            <img class="skill-icon" alt="Laravel" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg">
+                            <span class="text-xs">Laravel</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="Python">
+                            <img class="skill-icon" alt="Python" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+                            <span class="text-xs">Python</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="C#">
+                            <img class="skill-icon" alt="C#" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">
+                            <span class="text-xs">C#</span>
+                        </a>
+
+                        <a class="icon-chip" href="#" title="MySQL">
+                            <img class="skill-icon" alt="MySQL" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+                            <span class="text-xs">MySQL</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="MongoDB">
+                            <img class="skill-icon" alt="MongoDB" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+                            <span class="text-xs">MongoDB</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="WordPress">
+                            <img class="skill-icon" alt="WordPress" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg">
+                            <span class="text-xs">WordPress</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="Flutter">
+                            <img class="skill-icon" alt="Flutter" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg">
+                            <span class="text-xs">Flutter</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="Tailwind CSS">
+                            <img class="skill-icon" alt="Tailwind CSS" loading="lazy"
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg">
+                            <span class="text-xs">Tailwind CSS</span>
+                        </a>
+                        <a class="icon-chip" href="#" title="SEO">
+                            <img class="skill-icon" alt="SEO" loading="lazy"
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg">
+                            <span class="text-xs">SEO</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Languages (human) -->
+                <div
+                    class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
+                    <h4 id="humanLangTitle" class="font-semibold">Languages</h4>
+                    <ul class="mt-3 space-y-2 text-sm" id="humanLangList">
+                        <li><span data-i18n="langFa">Persian (Native)</span></li>
+                        <li><span data-i18n="langEn">English (Professional)</span></li>
+                    </ul>
+                </div>
+
+                <div id="contact"
+                    class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
+                    <h4 id="contactTitle" class="font-semibold">Contact</h4>
+                    <p id="contactHint" class="text-sm text-slate-600 dark:text-slate-300 mt-1">Use this demo form or
+                        open email client. To receive messages, configure an endpoint.</p>
+                    <form id="contactForm" class="mt-3 space-y-3">
+                        <input required type="text" id="c_name" placeholder="Name"
+                            class="w-full px-3 py-2 rounded-md bg-transparent border border-black/10 dark:border-white/10 focus:outline-none">
+                        <input required type="email" id="c_email" placeholder="Email"
+                            class="w-full px-3 py-2 rounded-md bg-transparent border border-black/10 dark:border-white/10 focus:outline-none">
+                        <textarea required id="c_message" rows="4" placeholder="Message"
+                            class="w-full px-3 py-2 rounded-md bg-transparent border border-black/10 dark:border-white/10 focus:outline-none"></textarea>
+                        <button type="submit"
+                            class="w-full px-3 py-2 rounded-md bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-semibold">Send
+                            Message</button>
+                    </form>
+                </div>
+
+                <div class="text-center text-xs text-slate-500 dark:text-slate-400">© <span id="year"></span> Mohammad —
+                    Built with ❤️</div>
+            </aside>
+
+        </div>
     </div>
-    <div class="flex-1">
-      <h4 class="font-semibold" data-i18n="proj3Title">SEO-Optimized Blog Platform</h4>
-      <p class="text-slate-600 dark:text-slate-300 text-sm mt-1" data-i18n="proj3Desc">Developed a blog platform with Next.js, optimized for SEO with SSR, meta tags, sitemaps, and schema markup, achieving 90+ Lighthouse SEO scores.</p>
-      <div class="mt-3 flex items-center gap-2">
-        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#" data-i18n="live">Live</a>
-        <a class="text-sm px-3 py-1 rounded-md bg-black/5 dark:bg:white/10" href="#" data-i18n="source">Source</a>
-      </div>
-    </div>
-    <div class="text-xs text-slate-500 dark:text-slate-400">2024</div>
-  </div>
-</article>
-          </div>
-        </section>
 
-        <!-- Printable resume area -->
-        <section id="printCV" class="hidden print:block bg-white text-black p-6 rounded-md"></section>
+    <script>
+        // ---------- i18n content ----------
+        const LANG = {
+            en: {
+                name: 'Mohammad', subtitle: 'Full‑Stack Developer • React • Laravel', heroTitle: "Hi, I'm Mohammad",
+                heroSub: 'I build fast, secure and beautiful full‑stack apps. From pixel‑perfect UIs to robust APIs.',
+                ctaProjects: 'Show projects', print: 'Print / Save as PDF', hireMe: 'Hire me', currently: 'Currently:',
+                currentlyText: 'Shipping a SaaS analytics platform', currentlyMeta: 'Full‑stack • React + Laravel',
+                iWorkOn: 'I work on',
+                projectsTitle: 'Selected Projects', projectsSubtitle: 'Showcasing product & open‑source work',
+                proj1Title: 'SaaS Dashboard', proj1Desc: 'Interactive analytics dashboard built with React + D3, focusing on realtime UX and performance.',
+                proj2Title: 'PWA E‑commerce', proj2Desc: 'High‑performance PWA with offline support and excellent Core Web Vitals.',
+                live: 'Live', source: 'Source',
+                experienceTitle: 'Experience & Education', experienceSubtitle: 'Detailed timeline',
+                exp1Role: 'Senior Full‑Stack Developer — TechNova Inc.', exp1Time: '2022 — Present · Remote', exp1Desc: 'SaaS with React, Node.js, Laravel, MongoDB. CI/CD and performance.',
+                exp2Role: 'Full‑Stack Developer — CodeCraft Solutions', exp2Time: '2019 — 2022 · Berlin, Germany', exp2Desc: 'Next.js + Laravel, REST/GraphQL, accessibility (WCAG 2.1).',
+                exp3Role: 'Frontend Developer — WebSpark Agency', exp3Time: '2017 — 2019 · Tehran, Iran', exp3Desc: 'React + Tailwind; pixel‑perfect UIs.',
+                edu1Title: 'B.Sc. in Computer Science — University of Tehran', edu1Time: '2013 — 2017', edu1Desc: 'Software Engineering, GPA 3.7/4.0',
+                edu2Title: 'Exchange — Technical University of Munich', edu2Time: '2016', edu2Desc: 'Advanced web & distributed systems',
+                skillsTitle: 'Skills', humanLangTitle: 'Languages', langFa: 'Persian (Native)', langEn: 'English (Professional)',
+                contactTitle: 'Contact', contactHint: 'Use this demo form or open email client. To receive messages, configure an endpoint.',
+                downloadCV: 'Download CV', projectsCount: 'Projects', certsCount: 'Certs', openToWork: 'For work', openToWorkVal: 'Open',
+                proj3Title: 'SEO-Optimized Blog Platform',
+                proj3Desc: 'Developed a blog platform with Next.js, optimized for SEO with SSR, meta tags, sitemaps, and schema markup, achieving 90+ Lighthouse SEO scores.',
+                exp1Desc: 'SaaS with React, Node.js, Laravel, MongoDB. CI/CD, performance, and SEO strategies including schema markup and meta optimization, boosting organic traffic by 30%.'
+            },
+            fa: {
+                name: 'محمد', subtitle: 'توسعه‌دهنده فول‌استک • React • Laravel', heroTitle: 'سلام، من محمد هستم',
+                heroSub: 'اپلیکیشن‌های فول‌استک سریع، ایمن و زیبا می‌سازم؛ از رابط کاربری دقیق تا API‌های قدرتمند.',
+                ctaProjects: 'دیدن پروژه‌ها', print: 'چاپ / ذخیره PDF', hireMe: 'همکاری با من', currently: 'در حال حاضر:',
+                currentlyText: 'تحویل یک پلتفرم تحلیل SaaS', currentlyMeta: 'فول‌استک • React + Laravel',
+                iWorkOn: 'من کار می‌کنم روی',
+                projectsTitle: 'پروژه‌های منتخب', projectsSubtitle: 'مروری بر محصولات و متن‌باز',
+                proj1Title: 'داشبورد SaaS', proj1Desc: 'داشبورد تحلیل تعاملی با React و D3 با تمرکز بر تجربهٔ بلادرنگ و کارایی.',
+                proj2Title: 'فروشگاه PWA', proj2Desc: 'PWA پرسرعت با پشتیبانی آفلاین و امتیاز عالی در Core Web Vitals.',
+                live: 'نمایش', source: 'سورس',
+                experienceTitle: 'سوابق و تحصیلات', experienceSubtitle: 'خط زمانی کامل',
+                exp1Role: 'ارشد فول‌استک — TechNova', exp1Time: '۲۰۲۲ — اکنون · دورکاری', exp1Desc: 'SaaS با React، Node.js، Laravel، MongoDB. CI/CD و کارایی.',
+                exp2Role: 'فول‌استک — CodeCraft', exp2Time: '۲۰۱۹ — ۲۰۲۲ · برلین', exp2Desc: 'Next.js + Laravel، API های REST/GraphQL، دسترس‌پذیری.',
+                exp3Role: 'فرانت‌اند — WebSpark', exp3Time: '۲۰۱۷ — ۲۰۱۹ · تهران', exp3Desc: 'React + Tailwind؛ رابط‌های دقیق.',
+                edu1Title: 'کارشناسی علوم کامپیوتر — دانشگاه تهران', edu1Time: '۲۰۱۳ — ۲۰۱۷', edu1Desc: 'مهندسی نرم‌افزار، معدل ۳.۷/۴',
+                edu2Title: 'مهمانی — دانشگاه صنعتی مونیخ', edu2Time: '۲۰۱۶', edu2Desc: 'فناوری‌های وب پیشرفته و سیستم‌های توزیع‌شده',
+                skillsTitle: 'مهارت‌ها', humanLangTitle: 'زبان‌ها', langFa: 'فارسی (زبان مادری)', langEn: 'انگلیسی (حرفه‌ای)',
+                contactTitle: 'تماس', contactHint: 'برای دمو از این فرم استفاده کنید یا ایمیل را باز کنید. برای دریافت پیام باید endpoint تنظیم شود.',
+                downloadCV: 'دانلود رزومه', projectsCount: 'پروژه', certsCount: 'مدرک', openToWork: 'آماده همکاری', openToWorkVal: 'آماده',
+                proj3Title: 'پلتفرم وبلاگ بهینه‌شده برای سئو',
+                proj3Desc: 'توسعه یک پلتفرم وبلاگ با Next.js، بهینه‌شده برای سئو با SSR، متا تگ‌ها، نقشه سایت و نشانه‌گذاری schema، با امتیاز ۹۰+ در Lighthouse.',
+                exp1Desc: 'SaaS با React، Node.js، Laravel، MongoDB. CI/CD، کارایی و استراتژی‌های سئو شامل نشانه‌گذاری schema و بهینه‌سازی متا، افزایش ۳۰٪ ترافیک ارگانیک.'
 
-        <!-- Experience / Education -->
-        <section class="rounded-2xl p-6 lg:p-8 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
-          <div class="flex items-center justify-between">
-            <h3 id="experienceTitle" class="text-lg font-semibold">Experience & Education</h3>
-            <div id="experienceSubtitle" class="text-sm text-slate-600 dark:text-slate-400">Detailed timeline</div>
-          </div>
+            }
+        };
 
-          <div class="mt-4 space-y-5">
-            <!-- Exp 1 -->
-            <div class="flex items-start gap-4">
-              <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
-              <div>
-                <div class="flex items-baseline gap-3 flex-wrap">
-                  <h4 class="font-semibold">Senior Full‑Stack Developer — TechNova Inc.</h4>
-                  <div class="text-xs text-slate-500 dark:text-slate-400">2022 — Present · Remote</div>
-                </div>
-                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
-                  <li>Led development of multi‑tenant SaaS (React, Node.js, Laravel, MongoDB) with CI/CD on GitHub Actions.</li>
-                  <li>Improved performance by <strong>40%</strong> and reduced infrastructure cost by <strong>25%</strong>.</li>
-                  <li>Mentored 5 engineers; established coding standards and review culture.</li>
-                  <li>Implemented SEO strategies, including schema markup, meta optimization, and site speed improvements, boosting organic traffic by <strong>30%</strong>.</li>
-                </ul>
-              </div>
-            </div>
+        // Elements map for quick i18n updates
+        const I18N_MAP = [
+            ['nameTitle', 'name'], ['subtitle', 'subtitle'], ['heroTitle', 'heroTitle'], ['heroSubtitle', 'heroSub'],
+            ['ctaProjects', 'ctaProjects'], ['printBtn', 'print'], ['hireBtn', 'hireMe'],
+            ['currentlyLbl', 'currently'], ['currentlyText', 'currentlyText'], ['currentlyMeta', 'currentlyMeta'],
+            ['iWorkOn', 'iWorkOn'], ['projectsTitle', 'projectsTitle'], ['projectsSubtitle', 'projectsSubtitle'],
+            ['experienceTitle', 'experienceTitle'], ['experienceSubtitle', 'experienceSubtitle'],
+            ['contactTitle', 'contactTitle'], ['contactHint', 'contactHint'], ['downloadCV', 'downloadCV'],
+            ['skillsTitle', 'skillsTitle'], ['humanLangTitle', 'humanLangTitle']
+        ];
 
-            <!-- Exp 2 -->
-            <div class="flex items-start gap-4">
-              <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
-              <div>
-                <div class="flex items-baseline gap-3 flex-wrap">
-                  <h4 class="font-semibold">Full‑Stack Developer — CodeCraft Solutions</h4>
-                  <div class="text-xs text-slate-500 dark:text-slate-400">2019 — 2022 · Berlin, Germany</div>
-                </div>
-                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
-                  <li>Delivered responsive apps using Next.js + Laravel; integrated REST/GraphQL APIs.</li>
-                  <li>Ensured accessibility compliance (WCAG 2.1 AA); reduced LCP to <strong>< 2.5s</strong>.</li>
-                  <li>Collaborated cross‑functionally with Design and Product; shipped every 2 weeks.</li>
-                </ul>
-              </div>
-            </div>
+        // Default language
+        let currentLang = localStorage.getItem('lang') || 'en';
 
-            <!-- Exp 3 -->
-            <div class="flex items-start gap-4">
-              <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
-              <div>
-                <div class="flex items-baseline gap-3 flex-wrap">
-                  <h4 class="font-semibold">Frontend Developer — WebSpark Agency</h4>
-                  <div class="text-xs text-slate-500 dark:text-slate-400">2017 — 2019 · Tehran, Iran</div>
-                </div>
-                <ul class="text-slate-600 dark:text-slate-300 mt-2 text-sm list-disc ps-5">
-                  <li>Built interactive UIs with React and Tailwind CSS; pixel‑perfect implementation.</li>
-                  <li>Improved Lighthouse score from 68 to 95+ through performance audits.</li>
-                </ul>
-              </div>
-            </div>
+        function applyLang(lang) {
+            currentLang = lang; localStorage.setItem('lang', lang);
+            const L = LANG[lang];
 
-            <!-- Edu -->
-            <div class="flex items-start gap-4">
-              <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
-              <div>
-                <div class="flex items-baseline gap-3 flex-wrap">
-                  <h4 class="font-semibold">B.Sc. in Computer Science — University of Tehran</h4>
-                  <div class="text-xs text-slate-500 dark:text-slate-400">2013 — 2017</div>
-                </div>
-                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">Specialization in Software Engineering · GPA: 3.7/4.0</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="w-3 h-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-300 mt-2"></div>
-              <div>
-                <div class="flex items-baseline gap-3 flex-wrap">
-                  <h4 class="font-semibold">Exchange Program — Technical University of Munich</h4>
-                  <div class="text-xs text-slate-500 dark:text-slate-400">2016</div>
-                </div>
-                <p class="text-slate-600 dark:text-slate-300 mt-1 text-sm">Advanced web technologies and distributed systems.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+            document.documentElement.lang = (lang === 'fa') ? 'fa' : 'en';
+            document.documentElement.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+            document.body.setAttribute('lang', lang);
+            document.body.style.fontFamily = (lang === 'fa') ? 'Vazirmatn, Inter, system-ui' : 'Inter, Vazirmatn, system-ui';
 
-        <!-- Certifications & Awards -->
-        <section class="rounded-2xl p-6 lg:p-8 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold">Certifications & Awards</h3>
-            <div class="text-sm text-slate-600 dark:text-slate-400">International resume add‑ons</div>
-          </div>
-          <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <ul class="space-y-2">
-              <li>Meta Front‑End Developer Professional Certificate — Coursera (2024)</li>
-              <li>Google Cloud Fundamentals — Coursera (2023)</li>
-              <li>Scrum Fundamentals Certified — SCRUMstudy (2022)</li>
-            </ul>
-            <ul class="space-y-2">
-              <li>Winner — Internal Hackathon (SaaS Analytics), TechNova (2023)</li>
-              <li>Top 10% — ICPC Tehran Regional (2016)</li>
-            </ul>
-          </div>
-        </section>
+            I18N_MAP.forEach(([id, key]) => { const el = document.getElementById(id); if (el) el.textContent = L[key]; });
 
-      </main>
+            // data-i18n attributes
+            document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (L[k]) el.textContent = L[k]; });
 
-      <!-- RIGHT: sidebar (profile, skills, contact) -->
-      <aside class="space-y-6">
-        <div class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
-          <div class="flex items-center gap-4">
-            <div class="w-16 h-16 rounded-xl overflow-hidden">
-              <img src="avatar.png" alt="avatar" class="w-full h-full object-cover" loading="lazy">
-            </div>
-            <div>
-              <div id="sideName" class="font-semibold">Mohammad</div>
-              <div id="sideTitle" class="text-sm text-slate-600 dark:text-slate-300">Full‑Stack Developer</div>
-              <div class="mt-2 text-xs text-slate-500 dark:text-slate-400" id="sideLocation">Rasht, Iran</div>
-            </div>
-          </div>
+            // highlight toggle buttons
+            document.getElementById('langEn').classList.toggle('bg-black/10');
+            document.getElementById('langEn').classList.toggle('dark:bg-white/20');
+            document.getElementById('langFa').classList.remove('bg-black/10', 'dark:bg-white/20');
+            if (lang === 'en') {
+                document.getElementById('langEn').classList.add('bg-black/10');
+                document.getElementById('langEn').classList.add('dark:bg-white/20');
+            } else {
+                document.getElementById('langFa').classList.add('bg-black/10');
+                document.getElementById('langFa').classList.add('dark:bg-white/20');
+            }
 
-          <div class="mt-4 grid grid-cols-3 gap-2 text-center text-sm">
-            <div>
-              <div class="font-semibold">12+</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="projectsCount">Projects</div>
-            </div>
-            <div>
-              <div class="font-semibold">5</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="certsCount">Certs</div>
-            </div>
-            <div>
-              <div class="font-semibold" data-i18n="openToWorkVal">Open</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400" data-i18n="openToWork">For work</div>
-            </div>
-          </div>
-<br>
-          <!-- Social icons -->
-          <div class="flex items-center gap-3">
-            <a href="#" class="social-btn" style="background-color:#24292e;border-radius: 5px;" title="GitHub">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-8 h-8" alt="GitHub" style="border-radius: 5px;">
-            </a>
-            <a href="#" class="social-btn" style="background-color:#0A66C2;border-radius: 5px;" title="LinkedIn">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-8 h-8" alt="LinkedIn" style="border-radius: 5px;">
-            </a>
-            <a href="#" class="social-btn" style="background-color:#229ED9;border-radius: 5px;" title="Telegram">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="w-8 h-8" alt="Telegram" style="border-radius: 5px;">
-            </a>
-            <a href="#" class="social-btn" style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);border-radius: 5px;" title="Instagram">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-8 h-8" alt="Instagram" style="border-radius: 5px;">
-            </a>
-          </div>
-        </div>
+            // Top skills chips (text changes; icons remain)
+            const topChips = {
+                en: ['React', 'Laravel', 'MySQL', 'TypeScript', 'Node.js', 'Next.js', 'MongoDB', 'Tailwind', 'SEO'],
+                fa: ['React', 'Laravel', 'MySQL', 'TypeScript', 'Node.js', 'Next.js', 'MongoDB', 'Tailwind', 'سئو']
+            };
+            const top = document.getElementById('topSkillChips'); top.innerHTML = '';
+            topChips[lang].slice(0, 8).forEach(label => {
+                const span = document.createElement('span');
+                span.className = 'inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/10 text-sm';
+                span.textContent = label; top.appendChild(span);
+            });
 
-        <!-- Skills with ICONS (online via Devicon CDN) -->
-        <div class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
-          <h4 id="skillsTitle" class="font-semibold">Skills</h4>
-          <div class="mt-4 grid grid-cols-3 sm:grid-cols-4 gap-3" id="skillsGrid">
-            <!-- Core -->
-            <a class="icon-chip" href="#" title="HTML5">
-              <img class="skill-icon" alt="HTML5" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
-              <span class="text-xs">HTML5</span>
-            </a>
-            <a class="icon-chip" href="#" title="CSS3">
-              <img class="skill-icon" alt="CSS3" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
-              <span class="text-xs">CSS3</span>
-            </a>
-            <a class="icon-chip" href="#" title="JavaScript">
-              <img class="skill-icon" alt="JavaScript" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
-              <span class="text-xs">JavaScript</span>
-            </a>
-            <a class="icon-chip" href="#" title="TypeScript">
-              <img class="skill-icon" alt="TypeScript" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
-              <span class="text-xs">TypeScript</span>
-            </a>
-            <a class="icon-chip" href="#" title="Bootstrap">
-              <img class="skill-icon" alt="Bootstrap" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
-              <span class="text-xs">Bootstrap</span>
-            </a>
-            <a class="icon-chip" href="#" title="React">
-              <img class="skill-icon" alt="React" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-              <span class="text-xs">React</span>
-            </a>
-            <a class="icon-chip" href="#" title="Next.js">
-              <img class="skill-icon" alt="Next.js" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg">
-              <span class="text-xs">Next.js</span>
-            </a>
-            <a class="icon-chip" href="#" title="Node.js">
-              <img class="skill-icon" alt="Node.js" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-              <span class="text-xs">Node.js</span>
-            </a>
-            <a class="icon-chip" href="#" title="PHP">
-              <img class="skill-icon" alt="PHP" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
-              <span class="text-xs">PHP</span>
-            </a>
-            <a class="icon-chip" href="#" title="Laravel">
-              <img class="skill-icon" alt="Laravel" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg">
-              <span class="text-xs">Laravel</span>
-            </a>
-            <a class="icon-chip" href="#" title="Python">
-              <img class="skill-icon" alt="Python" loading="lazy" 
-                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
-              <span class="text-xs">Python</span>
-            </a>
-            <a class="icon-chip" href="#" title="C#">
-              <img class="skill-icon" alt="C#" loading="lazy" 
-                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">
-              <span class="text-xs">C#</span>
-            </a>
-            
-            <a class="icon-chip" href="#" title="MySQL">
-              <img class="skill-icon" alt="MySQL" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-              <span class="text-xs">MySQL</span>
-            </a>
-            <a class="icon-chip" href="#" title="MongoDB">
-              <img class="skill-icon" alt="MongoDB" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-              <span class="text-xs">MongoDB</span>
-            </a>
-            <a class="icon-chip" href="#" title="WordPress">
-              <img class="skill-icon" alt="WordPress" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg">
-              <span class="text-xs">WordPress</span>
-            </a>
-            <a class="icon-chip" href="#" title="Flutter">
-              <img class="skill-icon" alt="Flutter" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg">
-              <span class="text-xs">Flutter</span>
-            </a>
-            <a class="icon-chip" href="#" title="Tailwind CSS">
-              <img class="skill-icon" alt="Tailwind CSS" loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg">
-              <span class="text-xs">Tailwind CSS</span>
-            </a>
-            <a class="icon-chip" href="#" title="SEO">
-              <img class="skill-icon" alt="SEO" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg">
-              <span class="text-xs">SEO</span>
-            </a>
-          </div>
-        </div>
+            // Human languages list
+            const f = document.querySelector('[data-i18n="langFa"]'); if (f) f.textContent = L.langFa;
+            const e = document.querySelector('[data-i18n="langEn"]'); if (e) e.textContent = L.langEn;
+        }
 
-        <!-- Languages (human) -->
-        <div class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
-          <h4 id="humanLangTitle" class="font-semibold">Languages</h4>
-          <ul class="mt-3 space-y-2 text-sm" id="humanLangList">
-            <li><span data-i18n="langFa">Persian (Native)</span></li>
-            <li><span data-i18n="langEn">English (Professional)</span></li>
-          </ul>
-        </div>
+        document.getElementById('langEn').addEventListener('click', () => applyLang('en'));
+        document.getElementById('langFa').addEventListener('click', () => applyLang('fa'));
+        applyLang(currentLang);
 
-        <div id="contact" class="rounded-2xl p-6 bg-white/70 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-lg">
-          <h4 id="contactTitle" class="font-semibold">Contact</h4>
-          <p id="contactHint" class="text-sm text-slate-600 dark:text-slate-300 mt-1">Use this demo form or open email client. To receive messages, configure an endpoint.</p>
-          <form id="contactForm" class="mt-3 space-y-3">
-            <input required type="text" id="c_name" placeholder="Name" class="w-full px-3 py-2 rounded-md bg-transparent border border-black/10 dark:border-white/10 focus:outline-none">
-            <input required type="email" id="c_email" placeholder="Email" class="w-full px-3 py-2 rounded-md bg-transparent border border-black/10 dark:border-white/10 focus:outline-none">
-            <textarea required id="c_message" rows="4" placeholder="Message" class="w-full px-3 py-2 rounded-md bg-transparent border border-black/10 dark:border-white/10 focus:outline-none"></textarea>
-            <button type="submit" class="w-full px-3 py-2 rounded-md bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-semibold">Send Message</button>
-          </form>
-        </div>
+        // ---------- Theme toggle (Tailwind dark class only) ----------
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let theme = savedTheme || (prefersDark ? 'dark' : 'light');
 
-        <div class="text-center text-xs text-slate-500 dark:text-slate-400">© <span id="year"></span> Mohammad — Built with ❤️</div>
-      </aside>
+        function setTheme(t) {
+            theme = t; localStorage.setItem('theme', t);
+            const root = document.documentElement;
+            if (t === 'dark') {
+                root.classList.add('dark');
+                themeIcon.innerHTML = '<path d="M17.293 13.293A8 8 0 116.707 2.707a6 6 0 0010.586 10.586z"/>';
+            } else {
+                root.classList.remove('dark');
+                themeIcon.innerHTML = '<path d="M12 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>';
+            }
+        }
+        setTheme(theme);
+        themeBtn.addEventListener('click', () => setTheme(theme === 'dark' ? 'light' : 'dark'));
 
-    </div>
-  </div>
+        // ---------- Typewriter ----------
+        const words = ['building delightful interfaces', 'optimizing performance', 'robust REST APIs', 'clean architecture', 'accessible UX'];
+        const persianWords = ['رابط‌های جذاب', 'بهینه‌سازی کارایی', 'REST API قدرتمند', 'معماری تمیز', 'تجربه کاربری در دسترس'];
+        const typeEl = document.getElementById('typewriter');
+        let wi = 0, ci = 0, forward = true;
+        function typeLoop() {
+            const pool = (currentLang === 'fa') ? persianWords : words;
+            const word = pool[wi];
+            if (forward) { ci++; if (ci > word.length) { forward = false; setTimeout(typeLoop, 1100); return } }
+            else { ci--; if (ci === 0) { forward = true; wi = (wi + 1) % pool.length } }
+            typeEl.textContent = word.slice(0, ci);
+            setTimeout(typeLoop, forward ? 65 : 40);
+        }
+        typeLoop();
 
-  <script>
-    // ---------- i18n content ----------
-    const LANG = {
-      en: {
-        name: 'Mohammad', subtitle: 'Full‑Stack Developer • React • Laravel', heroTitle: "Hi, I'm Mohammad",
-        heroSub: 'I build fast, secure and beautiful full‑stack apps. From pixel‑perfect UIs to robust APIs.',
-        ctaProjects: 'Show projects', print: 'Print / Save as PDF', hireMe: 'Hire me', currently: 'Currently:',
-        currentlyText: 'Shipping a SaaS analytics platform', currentlyMeta: 'Full‑stack • React + Laravel',
-        iWorkOn: 'I work on',
-        projectsTitle: 'Selected Projects', projectsSubtitle: 'Showcasing product & open‑source work',
-        proj1Title: 'SaaS Dashboard', proj1Desc: 'Interactive analytics dashboard built with React + D3, focusing on realtime UX and performance.',
-        proj2Title: 'PWA E‑commerce', proj2Desc: 'High‑performance PWA with offline support and excellent Core Web Vitals.',
-        live: 'Live', source: 'Source',
-        experienceTitle: 'Experience & Education', experienceSubtitle: 'Detailed timeline',
-        exp1Role: 'Senior Full‑Stack Developer — TechNova Inc.', exp1Time: '2022 — Present · Remote', exp1Desc: 'SaaS with React, Node.js, Laravel, MongoDB. CI/CD and performance.',
-        exp2Role: 'Full‑Stack Developer — CodeCraft Solutions', exp2Time: '2019 — 2022 · Berlin, Germany', exp2Desc: 'Next.js + Laravel, REST/GraphQL, accessibility (WCAG 2.1).',
-        exp3Role: 'Frontend Developer — WebSpark Agency', exp3Time: '2017 — 2019 · Tehran, Iran', exp3Desc: 'React + Tailwind; pixel‑perfect UIs.',
-        edu1Title: 'B.Sc. in Computer Science — University of Tehran', edu1Time: '2013 — 2017', edu1Desc: 'Software Engineering, GPA 3.7/4.0',
-        edu2Title: 'Exchange — Technical University of Munich', edu2Time: '2016', edu2Desc: 'Advanced web & distributed systems',
-        skillsTitle: 'Skills', humanLangTitle: 'Languages', langFa: 'Persian (Native)', langEn: 'English (Professional)',
-        contactTitle: 'Contact', contactHint: 'Use this demo form or open email client. To receive messages, configure an endpoint.',
-        downloadCV: 'Download CV', projectsCount: 'Projects', certsCount: 'Certs', openToWork: 'For work', openToWorkVal: 'Open',
-        proj3Title: 'SEO-Optimized Blog Platform',
-    proj3Desc: 'Developed a blog platform with Next.js, optimized for SEO with SSR, meta tags, sitemaps, and schema markup, achieving 90+ Lighthouse SEO scores.',
-        exp1Desc: 'SaaS with React, Node.js, Laravel, MongoDB. CI/CD, performance, and SEO strategies including schema markup and meta optimization, boosting organic traffic by 30%.'
-      },
-      fa: {
-        name: 'محمد', subtitle: 'توسعه‌دهنده فول‌استک • React • Laravel', heroTitle: 'سلام، من محمد هستم',
-        heroSub: 'اپلیکیشن‌های فول‌استک سریع، ایمن و زیبا می‌سازم؛ از رابط کاربری دقیق تا API‌های قدرتمند.',
-        ctaProjects: 'دیدن پروژه‌ها', print: 'چاپ / ذخیره PDF', hireMe: 'همکاری با من', currently: 'در حال حاضر:',
-        currentlyText: 'تحویل یک پلتفرم تحلیل SaaS', currentlyMeta: 'فول‌استک • React + Laravel',
-        iWorkOn: 'من کار می‌کنم روی',
-        projectsTitle: 'پروژه‌های منتخب', projectsSubtitle: 'مروری بر محصولات و متن‌باز',
-        proj1Title: 'داشبورد SaaS', proj1Desc: 'داشبورد تحلیل تعاملی با React و D3 با تمرکز بر تجربهٔ بلادرنگ و کارایی.',
-        proj2Title: 'فروشگاه PWA', proj2Desc: 'PWA پرسرعت با پشتیبانی آفلاین و امتیاز عالی در Core Web Vitals.',
-        live: 'نمایش', source: 'سورس',
-        experienceTitle: 'سوابق و تحصیلات', experienceSubtitle: 'خط زمانی کامل',
-        exp1Role: 'ارشد فول‌استک — TechNova', exp1Time: '۲۰۲۲ — اکنون · دورکاری', exp1Desc: 'SaaS با React، Node.js، Laravel، MongoDB. CI/CD و کارایی.',
-        exp2Role: 'فول‌استک — CodeCraft', exp2Time: '۲۰۱۹ — ۲۰۲۲ · برلین', exp2Desc: 'Next.js + Laravel، API های REST/GraphQL، دسترس‌پذیری.',
-        exp3Role: 'فرانت‌اند — WebSpark', exp3Time: '۲۰۱۷ — ۲۰۱۹ · تهران', exp3Desc: 'React + Tailwind؛ رابط‌های دقیق.',
-        edu1Title: 'کارشناسی علوم کامپیوتر — دانشگاه تهران', edu1Time: '۲۰۱۳ — ۲۰۱۷', edu1Desc: 'مهندسی نرم‌افزار، معدل ۳.۷/۴',
-        edu2Title: 'مهمانی — دانشگاه صنعتی مونیخ', edu2Time: '۲۰۱۶', edu2Desc: 'فناوری‌های وب پیشرفته و سیستم‌های توزیع‌شده',
-        skillsTitle: 'مهارت‌ها', humanLangTitle: 'زبان‌ها', langFa: 'فارسی (زبان مادری)', langEn: 'انگلیسی (حرفه‌ای)',
-        contactTitle: 'تماس', contactHint: 'برای دمو از این فرم استفاده کنید یا ایمیل را باز کنید. برای دریافت پیام باید endpoint تنظیم شود.',
-        downloadCV: 'دانلود رزومه', projectsCount: 'پروژه', certsCount: 'مدرک', openToWork: 'آماده همکاری', openToWorkVal: 'آماده',
-        proj3Title: 'پلتفرم وبلاگ بهینه‌شده برای سئو',
-    proj3Desc: 'توسعه یک پلتفرم وبلاگ با Next.js، بهینه‌شده برای سئو با SSR، متا تگ‌ها، نقشه سایت و نشانه‌گذاری schema، با امتیاز ۹۰+ در Lighthouse.',
-        exp1Desc: 'SaaS با React، Node.js، Laravel، MongoDB. CI/CD، کارایی و استراتژی‌های سئو شامل نشانه‌گذاری schema و بهینه‌سازی متا، افزایش ۳۰٪ ترافیک ارگانیک.'
-        
-      }
-    };
+        // ---------- Print / Save as PDF ----------
+        document.getElementById('printBtn').addEventListener('click', () => {
+            const w = window.open('', '_blank');
+            const L = LANG[currentLang];
+            const html = `<!doctype html><html><head><meta charset="utf-8"><title>${L.name} — CV</title><style>body{font-family:Inter, Vazirmatn, Arial; padding:24px;color:#111} h1{font-size:22px} .muted{color:#555} ul{margin:0;padding-left:16px}</style></head><body>${generatePrintableHTML(L)}</body></html>`;
+            w.document.write(html); w.document.close();
+            setTimeout(() => w.print(), 600);
+        });
 
-    // Elements map for quick i18n updates
-    const I18N_MAP = [
-      ['nameTitle','name'], ['subtitle','subtitle'], ['heroTitle','heroTitle'], ['heroSubtitle','heroSub'],
-      ['ctaProjects','ctaProjects'], ['printBtn','print'], ['hireBtn','hireMe'],
-      ['currentlyLbl','currently'], ['currentlyText','currentlyText'], ['currentlyMeta','currentlyMeta'],
-      ['iWorkOn','iWorkOn'], ['projectsTitle','projectsTitle'], ['projectsSubtitle','projectsSubtitle'],
-      ['experienceTitle','experienceTitle'], ['experienceSubtitle','experienceSubtitle'],
-      ['contactTitle','contactTitle'], ['contactHint','contactHint'], ['downloadCV','downloadCV'],
-      ['skillsTitle','skillsTitle'], ['humanLangTitle','humanLangTitle']
-    ];
-
-    // Default language
-    let currentLang = localStorage.getItem('lang') || 'en';
-
-    function applyLang(lang){
-      currentLang = lang; localStorage.setItem('lang', lang);
-      const L = LANG[lang];
-
-      document.documentElement.lang = (lang === 'fa') ? 'fa' : 'en';
-      document.documentElement.dir = (lang === 'fa') ? 'rtl' : 'ltr';
-      document.body.setAttribute('lang', lang);
-      document.body.style.fontFamily = (lang === 'fa') ? 'Vazirmatn, Inter, system-ui' : 'Inter, Vazirmatn, system-ui';
-
-      I18N_MAP.forEach(([id,key])=>{ const el = document.getElementById(id); if(el) el.textContent = L[key]; });
-
-      // data-i18n attributes
-      document.querySelectorAll('[data-i18n]').forEach(el=>{ const k = el.getAttribute('data-i18n'); if(L[k]) el.textContent = L[k]; });
-
-      // highlight toggle buttons
-      document.getElementById('langEn').classList.toggle('bg-black/10');
-      document.getElementById('langEn').classList.toggle('dark:bg-white/20');
-      document.getElementById('langFa').classList.remove('bg-black/10','dark:bg-white/20');
-      if(lang==='en'){
-        document.getElementById('langEn').classList.add('bg-black/10');
-        document.getElementById('langEn').classList.add('dark:bg-white/20');
-      } else {
-        document.getElementById('langFa').classList.add('bg-black/10');
-        document.getElementById('langFa').classList.add('dark:bg-white/20');
-      }
-
-      // Top skills chips (text changes; icons remain)
-      const topChips = {
-        en: ['React','Laravel','MySQL','TypeScript','Node.js','Next.js','MongoDB','Tailwind', 'SEO'],
-        fa: ['React','Laravel','MySQL','TypeScript','Node.js','Next.js','MongoDB','Tailwind', 'سئو']
-      };
-      const top = document.getElementById('topSkillChips'); top.innerHTML = '';
-      topChips[lang].slice(0,8).forEach(label=>{
-        const span = document.createElement('span');
-        span.className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/10 text-sm';
-        span.textContent = label; top.appendChild(span);
-      });
-
-      // Human languages list
-      const f = document.querySelector('[data-i18n="langFa"]'); if (f) f.textContent = L.langFa;
-      const e = document.querySelector('[data-i18n="langEn"]'); if (e) e.textContent = L.langEn;
-    }
-
-    document.getElementById('langEn').addEventListener('click', ()=> applyLang('en'));
-    document.getElementById('langFa').addEventListener('click', ()=> applyLang('fa'));
-    applyLang(currentLang);
-
-    // ---------- Theme toggle (Tailwind dark class only) ----------
-    const themeBtn = document.getElementById('themeBtn');
-    const themeIcon = document.getElementById('themeIcon');
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    let theme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-    function setTheme(t){
-      theme = t; localStorage.setItem('theme', t);
-      const root = document.documentElement;
-      if(t === 'dark'){
-        root.classList.add('dark');
-        themeIcon.innerHTML = '<path d="M17.293 13.293A8 8 0 116.707 2.707a6 6 0 0010.586 10.586z"/>';
-      } else {
-        root.classList.remove('dark');
-        themeIcon.innerHTML = '<path d="M12 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>';
-      }
-    }
-    setTheme(theme);
-    themeBtn.addEventListener('click', ()=> setTheme(theme === 'dark' ? 'light' : 'dark'));
-
-    // ---------- Typewriter ----------
-    const words = ['building delightful interfaces','optimizing performance','robust REST APIs','clean architecture','accessible UX'];
-    const persianWords = ['رابط‌های جذاب','بهینه‌سازی کارایی','REST API قدرتمند','معماری تمیز','تجربه کاربری در دسترس'];
-    const typeEl = document.getElementById('typewriter');
-    let wi=0, ci=0, forward=true;
-    function typeLoop(){
-      const pool = (currentLang === 'fa') ? persianWords : words;
-      const word = pool[wi];
-      if(forward){ ci++; if(ci>word.length){ forward=false; setTimeout(typeLoop,1100); return } }
-      else { ci--; if(ci===0){ forward=true; wi=(wi+1)%pool.length } }
-      typeEl.textContent = word.slice(0,ci);
-      setTimeout(typeLoop, forward? 65:40);
-    }
-    typeLoop();
-
-    // ---------- Print / Save as PDF ----------
-    document.getElementById('printBtn').addEventListener('click', ()=>{
-      const w = window.open('', '_blank');
-      const L = LANG[currentLang];
-      const html = `<!doctype html><html><head><meta charset="utf-8"><title>${L.name} — CV</title><style>body{font-family:Inter, Vazirmatn, Arial; padding:24px;color:#111} h1{font-size:22px} .muted{color:#555} ul{margin:0;padding-left:16px}</style></head><body>${generatePrintableHTML(L)}</body></html>`;
-      w.document.write(html); w.document.close();
-      setTimeout(()=> w.print(), 600);
-    });
-
-    function generatePrintableHTML(L){
-      return `
+        function generatePrintableHTML(L) {
+            return `
         <h1>${L.name}</h1>
         <div class="muted">${L.subtitle}</div>
         <hr>
-        <h2>${currentLang==='fa'?'خلاصه':'Summary'}</h2>
+        <h2>${currentLang === 'fa' ? 'خلاصه' : 'Summary'}</h2>
         <p>${L.heroSub}</p>
-        <h2>${currentLang==='fa'?'سوابق':'Experience'}</h2>
+        <h2>${currentLang === 'fa' ? 'سوابق' : 'Experience'}</h2>
         <ul>
           <li>${L.exp1Role} (${L.exp1Time}): ${L.exp1Desc}</li>
           <li>${L.exp2Role} (${L.exp2Time}): ${L.exp2Desc}</li>
           <li>${L.exp3Role} (${L.exp3Time}): ${L.exp3Desc}</li>
         </ul>
-        <h2>${currentLang==='fa'?'تحصیلات':'Education'}</h2>
+        <h2>${currentLang === 'fa' ? 'تحصیلات' : 'Education'}</h2>
         <p>${L.edu1Title} (${L.edu1Time}) — ${L.edu1Desc}</p>
         <p>${L.edu2Title} (${L.edu2Time}) — ${L.edu2Desc}</p>
-        <h2>${currentLang==='fa'?'مهارت‌ها':'Skills'}</h2>
+        <h2>${currentLang === 'fa' ? 'مهارت‌ها' : 'Skills'}</h2>
         <p>HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, PHP, Laravel, MySQL, MongoDB, WordPress, Flutter, Tailwind CSS</p>
-        <h2>${currentLang==='fa'?'زبان‌ها':'Languages'}</h2>
+        <h2>${currentLang === 'fa' ? 'زبان‌ها' : 'Languages'}</h2>
         <p>${L.langFa} — ${L.langEn}</p>
       `
-    }
+        }
 
-    // ---------- Contact form demo ----------
-    document.getElementById('contactForm').addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const name = document.getElementById('c_name').value.trim();
-      const email = document.getElementById('c_email').value.trim();
-      const message = document.getElementById('c_message').value.trim();
-      if(!name||!email||!message){ alert(currentLang==='fa'?'همه فیلدها را پر کنید':'Please fill all fields'); return }
-      const subject = encodeURIComponent((currentLang==='fa'?'ارتباط از رزومه — ':'Contact from portfolio — ') + name);
-      const body = encodeURIComponent(message + "\n\n" + name + ' — ' + email);
-      window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
-    });
+        // ---------- Contact form demo ----------
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('c_name').value.trim();
+            const email = document.getElementById('c_email').value.trim();
+            const message = document.getElementById('c_message').value.trim();
+            if (!name || !email || !message) { alert(currentLang === 'fa' ? 'همه فیلدها را پر کنید' : 'Please fill all fields'); return }
+            const subject = encodeURIComponent((currentLang === 'fa' ? 'ارتباط از رزومه — ' : 'Contact from portfolio — ') + name);
+            const body = encodeURIComponent(message + "\n\n" + name + ' — ' + email);
+            window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+        });
 
-    // ---------- small helpers ----------
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('downloadCV').addEventListener('click', ()=>{
-      const a = document.createElement('a'); a.href='resume.pdf'; a.download='resume.pdf'; document.body.appendChild(a); a.click(); a.remove();
-    });
-    document.querySelectorAll('img').forEach(i=> i.loading='lazy');
+        // ---------- small helpers ----------
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('downloadCV').addEventListener('click', () => {
+            const a = document.createElement('a'); a.href = 'resume.pdf'; a.download = 'resume.pdf'; document.body.appendChild(a); a.click(); a.remove();
+        });
+        document.querySelectorAll('img').forEach(i => i.loading = 'lazy');
 
-    // Language init after everything
-    applyLang(currentLang);
-  </script>
+        // Language init after everything
+        applyLang(currentLang);
+    </script>
 </body>
+
 </html>
